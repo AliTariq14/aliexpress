@@ -8,7 +8,7 @@ import CardContainer from "./CardContainer";
 class HomePage extends Component {
   state = {};
   render() {
-    const divColor = { backgroundColor: "darkorange" };
+    const divColor = { backgroundColor: "yellow" };
     const height = { height: "100%" };
     const columnContainer = { height: "40%", backgroundColor: "grey" };
     return (
