@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
-import SideBar from "../../components/SideBar/SideBar";
-import Slider from "../../components/Slider/Slider";
-import CardContainer from "../../components/CardContainer/CardContainer";
+import SideBar from "../../components/SideBar";
+import Slider from "../../components/Slider";
+import CardContainer from "../../components/CardContainer";
 
 class HomePage extends Component {
   state = {};

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
 import NavBar from "./NavBar";
-import SerachBox from "./SearchBox";
+import SearchBox from "./SearchBox";
 
 class Header extends Component {
   state = {};
@@ -13,7 +13,7 @@ class Header extends Component {
             <h3> AliExpress Logo</h3>
           </Col>
           <Col span={10}>
-            <SerachBox />
+            <SearchBox />
           </Col>
 
           <Col span={8}>

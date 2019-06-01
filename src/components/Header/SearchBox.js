@@ -3,7 +3,7 @@ import { Input } from "antd";
 
 const Search = Input.Search;
 
-class SerachBox extends Component {
+class SearchBox extends Component {
   state = {};
   render() {
     return (
@@ -16,4 +16,4 @@ class SerachBox extends Component {
   }
 }
 
-export default SerachBox;
+export default SearchBox;
