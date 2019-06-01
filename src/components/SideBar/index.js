@@ -20,7 +20,7 @@ class SideBar extends Component {
   };
   render() {
     return (
-      <div className="sideBar">
+      <div>
         <Menu mode="vertical">
           {this.state.items.map(i => (
             <SubMenu key={i.id} title={<span>{i.name}</span>}>
