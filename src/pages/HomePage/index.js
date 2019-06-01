@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
-import SideBar from "../../components/SideBar";
-import Slider from "../../components/Slider";
-import CardContainer from "../../components/CardContainer";
+import { CardContainer, SideBar, Slider } from "../../components";
 
 class HomePage extends Component {
-  state = {};
   render() {
     const divColor = { backgroundColor: "yellow" };
     const height = { height: "100%" };
