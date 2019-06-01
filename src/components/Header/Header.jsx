@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
-import NavBar from "./components/NavBar";
-import SerachBox from "./components/SearchBox";
-import "./App.css";
+import NavBar from "./NavBar";
+import SerachBox from "./SearchBox";
 
 class Header extends Component {
   state = {};

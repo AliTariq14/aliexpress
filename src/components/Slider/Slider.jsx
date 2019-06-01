@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Carousel } from "antd";
-import "../App.css";
+
 class Slider extends Component {
   state = {};
   render() {

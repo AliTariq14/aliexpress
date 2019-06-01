@@ -1,18 +1,15 @@
 import React from "react";
 import "antd/dist/antd.css";
-import NavBar from "./components/NavBar";
-import SideBar from "./components/SideBar";
-import Slider from "./components/Slider";
-import Header from "./Header";
-import HomePage from "./HomePage";
-import "./App.css";
+import Header from "./components/Header/Header";
+import HomePage from "./pages/HomePage/HomePage";
+
 class App extends React.Component {
   render() {
     return (
-      <div className="mainContainer">
+      <>
         <Header />
         <HomePage />
-      </div>
+      </>
     );
   }
 }
