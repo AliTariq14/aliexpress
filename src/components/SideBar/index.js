@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-import { Menu, Icon } from "antd";
-
+import { Menu } from "antd";
+import styled from "styled-components";
 const { SubMenu } = Menu;
+
+const StyledMenu = styled(Menu)`
+  background-color: ${props => props.color};
+  height: ${props => props.height}em;
+`;
 
 class SideBar extends Component {
   state = {
@@ -18,24 +23,23 @@ class SideBar extends Component {
       { id: 10, name: `Kid's Wear` }
     ]
   };
+
   render() {
     return (
-      <div>
-        <Menu mode="vertical">
-          {this.state.items.map(i => (
-            <SubMenu key={i.id} title={<span>{i.name}</span>}>
-              <Menu.ItemGroup title="Item 1">
-                <Menu.Item key="1">Option 1</Menu.Item>
-                <Menu.Item key="2">Option 2</Menu.Item>
-              </Menu.ItemGroup>
-              <Menu.ItemGroup title="Iteom 2">
-                <Menu.Item key="3">Option 3</Menu.Item>
-                <Menu.Item key="4">Option 4</Menu.Item>
-              </Menu.ItemGroup>
-            </SubMenu>
-          ))}
-        </Menu>
-      </div>
+      <StyledMenu color="yellow" height="32" mode="vertical">
+        {this.state.items.map(i => (
+          <SubMenu key={i.id} title={<span>{i.name}</span>}>
+            <Menu.ItemGroup title="Item 1">
+              <Menu.Item key="1">Option 1</Menu.Item>
+              <Menu.Item key="2">Option 2</Menu.Item>
+            </Menu.ItemGroup>
+            <Menu.ItemGroup title="Iteom 2">
+              <Menu.Item key="3">Option 3</Menu.Item>
+              <Menu.Item key="4">Option 4</Menu.Item>
+            </Menu.ItemGroup>
+          </SubMenu>
+        ))}
+      </StyledMenu>
     );
   }
 }
