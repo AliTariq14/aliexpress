@@ -31,10 +31,16 @@ class SideBarDrawer extends Component {
   // };
   render() {
     // this.handleDisplay();
+    console.log(data);
     if (this.props.open == false) return <></>;
     return (
-      <StyledDiv onMouseLeave={this.props.onMouseLeave}>
-        <div />
+      <StyledDiv color="black" onMouseLeave={this.props.onMouseLeave}>
+        <div>
+          {data.map(m => (
+            <h1 key={m.category_1._id}>{m.category_1.name}</h1>
+          ))}
+          {/* {data.map(m.categorty_1.items.map(item => <li>{item}</li>))} */}
+        </div>
       </StyledDiv>
       // <StyledDrawer height="36" backgroundColor="grey">
       //   hello

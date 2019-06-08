@@ -12,7 +12,11 @@ const data = [];
 // }
 for (let i = 0; i < 6; i += 1) {
   data.push({
-    catogory_1: { name: "Title1", items: ["item1", "item1", "item1", "item1"] }
+    category_1: {
+      _id: i,
+      name: "Title1",
+      items: ["item1", "item1", "item1", "item1"]
+    }
   });
 }
 
