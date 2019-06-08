@@ -13,13 +13,13 @@ const CenteredDiv = styled.div`
 
 const HoverShow = styled.div`
    {
-     z-index:2
+    z-index:2
     display:inline-block;
     position: absolute;
     background-color: red;
     width: 207px;
     height: 400px;
-    padding-top:5em
+    padding-top:5em;
     right: 0;
     
   }

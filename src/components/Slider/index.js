@@ -12,6 +12,15 @@ const StyledCarousel = styled(Carousel)`
     color: ${props => props.textColor};
   }
 `;
+const StyledDiv = styled.div`
+  position: absolute;
+  z-index: 1;
+  background-color: #6f0;
+  height: 250px;
+  width: 350px;
+  top: 40px;
+  left: 40px;
+`;
 
 class Slider extends Component {
   render() {
