@@ -13,7 +13,6 @@ class HomePage extends Component {
   };
 
   render() {
-    console.log(data);
     return (
       <Row type="flex" justify="start">
         <SideBarDrawer
