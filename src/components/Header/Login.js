@@ -37,7 +37,7 @@ const HoverShow = styled.div`
 class Login extends Component {
   state = {
     isHovered: false,
-    color: "green",
+    color: "darkorange",
     border: "none"
   };
 
