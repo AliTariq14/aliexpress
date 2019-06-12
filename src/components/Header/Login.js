@@ -7,52 +7,57 @@ const InLineDiv = styled.div`
   display: inline-block;
   color: black;
 `;
-const CenteredDiv = styled.div`
-  text-align: center;
+const AlignedDiv = styled.div`
+  text-align: ${props => props.textAlign};
 `;
 
+const HoverDiv = styled.div`
+  :hover {
+    background-color: lightgrey;
+    cursor: pointer;
+  }
+  padding-left: 1.8em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+`;
 const HoverShow = styled.div`
    {
     z-index:2
     display:inline-block;
     position: absolute;
-    background-color: red;
-    width: 207px;
-    height: 400px;
-    padding-top:5em;
-    right: 0;
+    background-color: white;
+    width: 250px;
     
+    padding-top:2.5em;
+    right: 0;
+    border-style:${props => props.border};    
   }
 `;
 
 class Login extends Component {
   state = {
-    isHovered: false
+    isHovered: false,
+    color: "green",
+    border: "none"
   };
 
   toggleHover = () => {
     this.setState(prevState => ({ isHovered: !prevState.isHovered }));
+    if (this.state.isHovered) {
+      this.setState({ color: "darkorange", border: "none" });
+    } else {
+      this.setState({ color: "white", border: "ridge" });
+    }
   };
 
   render() {
+    const style = {
+      backgroundColor: this.state.color,
+      borderStyle: this.state.border
+    };
+
     return (
-      <div onMouseEnter={this.toggleHover}>
-        {this.state.isHovered ? (
-          <HoverShow id="hoverShow1" onMouseLeave={this.toggleHover}>
-            <Typography.Text>Welcome to AliExpress.com</Typography.Text>
-            <Button style={{ marginTop: "1em" }} type="primary" block>
-              Primary
-            </Button>
-
-            <Divider />
-            <Button type="primary" block>
-              Primary
-            </Button>
-          </HoverShow>
-        ) : (
-          <></>
-        )}
-
+      <div onMouseEnter={this.toggleHover} style={style}>
         <div>
           <InLineDiv>
             <Icon style={{ fontSize: "2.4em" }} type="user" />
@@ -60,22 +65,91 @@ class Login extends Component {
 
           <InLineDiv>
             <span>
-              <Button size="small" type="link" ghost>
+              <Button size="small" type="link" style={{ color: "black" }} ghost>
                 SignIn
               </Button>
             </span>
-            <Divider type="vertical" />
+            <Divider type="vertical" style={{ backgroundColor: "black" }} />
             <span>
-              <Button size="small" type="link" ghost>
+              <Button size="small" type="link" style={{ color: "black" }} ghost>
                 SignUp
               </Button>
             </span>
 
-            <CenteredDiv>
+            <AlignedDiv textAlign="center">
               <Typography.Text>AliExpress</Typography.Text>
-            </CenteredDiv>
+            </AlignedDiv>
           </InLineDiv>
         </div>
+
+        {this.state.isHovered ? (
+          <HoverShow
+            id="hoverShow1"
+            onMouseLeave={this.toggleHover}
+            border={this.state.border}
+          >
+            <div
+              style={{
+                textAlign: "center",
+                width: "80%",
+                marginLeft: "auto",
+                marginRight: "auto"
+              }}
+            >
+              <div style={{ textAlign: "left" }}>
+                <Typography.Text>Welcome to AliExpress.com</Typography.Text>
+              </div>
+
+              <Button style={{ marginTop: "0.5em" }} type="primary" block>
+                SignIn
+              </Button>
+
+              <div style={{ marginTop: "0.5em", textAlign: "left" }}>
+                <Typography.Text>SignIn using</Typography.Text>
+                <span>
+                  <Icon type="facebook" style={{ padding: "0.25em" }} />
+                </span>
+
+                <span>
+                  <Icon type="google" style={{ padding: "0.25em" }} />
+                </span>
+              </div>
+
+              <Divider style={{ margin: "0.75em 0" }} />
+
+              <div style={{ textAlign: "left" }}>
+                <Typography.Text>New Customer ?</Typography.Text>
+              </div>
+              <Button type="primary" style={{ marginTop: "0.5em" }} block>
+                Join Free
+              </Button>
+            </div>
+
+            <div style={{ marginTop: "0.5em" }}>
+              <HoverDiv>
+                <Typography.Text>My Orders</Typography.Text>
+              </HoverDiv>
+
+              <HoverDiv>
+                <Typography.Text>Message Center</Typography.Text>
+              </HoverDiv>
+
+              <HoverDiv>
+                <Typography.Text>Wish List</Typography.Text>
+              </HoverDiv>
+
+              <HoverDiv>
+                <Typography.Text>My Favourite Stores</Typography.Text>
+              </HoverDiv>
+
+              <HoverDiv>
+                <Typography.Text>My Coupons</Typography.Text>
+              </HoverDiv>
+            </div>
+          </HoverShow>
+        ) : (
+          <></>
+        )}
       </div>
     );
   }
